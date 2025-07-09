@@ -1,17 +1,7 @@
 FROM ubuntu:20.04
 
-RUN apt-get update && apt-get install -y \
-    wget \
-    unzip \
-    curl \
-    apt-transport-https \
-    lsb-release \
-    gnupg \
-    ca-certificates \
-    && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | tee /usr/share/keyrings/cloud.google.gpg > /dev/null \
-    && echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list \
-    && apt-get update \
-    && apt-get install -y google-cloud-sdk
+RUN curl -sSL https://sdk.cloud.google.com | bash
+ENV PATH $PATH:/root/google-cloud-sdk/bin
 
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y wine wget unzip \
