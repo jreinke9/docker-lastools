@@ -11,7 +11,7 @@ RUN apt-get update \
     && wine LAStools/bin/las2las -h
 COPY entrypoint.sh entrypoint.sh
 WORKDIR /lastools
-ENTRYPOINT ["/./entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
 
 
 
