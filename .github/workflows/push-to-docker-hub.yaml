@@ -24,6 +24,6 @@ jobs:
 
       - name: Build and push Docker image to GCR
         run: |
-          IMAGE="syte-services/lastools"
+          IMAGE="europe-west3-docker.pkg.dev/syte-services/lastools"
           docker build -t $IMAGE .
           docker push $IMAGE
