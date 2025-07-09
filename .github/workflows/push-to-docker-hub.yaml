@@ -24,6 +24,6 @@ jobs:
 
       - name: Build and push Docker image to GCR
         run: |
-          IMAGE="gcr.io/lastools"
+          IMAGE="gcr.io/enersyte/lastools"
           docker build -t $IMAGE .
           docker push $IMAGE
