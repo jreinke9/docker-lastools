@@ -16,6 +16,7 @@ ENV DISPLAY=:0.0
 
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y wine wget unzip \
+    vcrun2015 vcrun2017 vcrun2019 \
     # For some reason, we need a separate step for adding a wine32 architecture
     && dpkg --add-architecture i386 \
     && apt-get update \
