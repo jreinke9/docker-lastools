@@ -19,7 +19,7 @@ RUN apt-get update \
     # For some reason, we need a separate step for adding a wine32 architecture
     && dpkg --add-architecture i386 \
     && apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y wine32 winetricks \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y wine32 wine64 winetricks \
     && winetricks vcrun2015 vcrun2017 vcrun2019 \
     && wget https://lastools.github.io/download/LAStools.zip \
     && unzip LAStools.zip \
