@@ -8,8 +8,11 @@ RUN apt-get update && apt-get install -y \
     lsb-release \
     gnupg \
     ca-certificates \
+    xvfb \
     && curl -sSL https://sdk.cloud.google.com | bash
 ENV PATH $PATH:/root/google-cloud-sdk/bin
+ENV WINEDEBUG=-all
+ENV DISPLAY=:0.0
 
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y wine wget unzip \
