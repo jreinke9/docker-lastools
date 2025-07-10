@@ -20,7 +20,7 @@ RUN apt-get update \
     && dpkg --add-architecture i386 \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y wine32 wine64 winetricks \
-    && xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" winetricks -q vcrun2015 vcrun2017 vcrun2019 \
+    && xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" winetricks -q vcrun2019 \
     && wget https://lastools.github.io/download/LAStools.zip \
     && unzip LAStools.zip \
     # Run one program to configure wine
