@@ -16,7 +16,7 @@ ENV DISPLAY=:0.0
 
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-       wine wget unzip ca-certificates \
+       wine wget unzip cabextract \
     && dpkg --add-architecture i386 \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
